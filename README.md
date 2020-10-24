@@ -33,7 +33,7 @@ virtualenvをインストールすることをおすすめします。
     仮想環境の有効化
 
     ```bash
-    source .env/bin/active
+    source .env/bin/activate
     ```
 
     依存関係のインストール
@@ -57,6 +57,7 @@ virtualenvをインストールすることをおすすめします。
         ```bash
         python manage.py createsuperuser
         ユーザー名 (leave blank to use 'ubuntu'): admin
+        メールアドレス: admin@examlpe.com
         Password: admin
         Password (again): admin
         このパスワードは ユーザー名 と似すぎています。
