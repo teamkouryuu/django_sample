@@ -6,7 +6,6 @@ from django.utils import timezone
 # Create your models here.
 
 class Question(models.Model):
-
     question_text = models.CharField(max_length=200, blank=True, null=True)
     pub_date = models.DateTimeField('date publisheds')
 
@@ -18,13 +17,13 @@ class Question(models.Model):
     
     def was_published_recently(self):
         """
-        docstring
+        最近の日付であることを確認する。
         """
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 
 class Choice(models.Model):
-
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200, blank=True, null=True)
     votes = models.IntegerField(default=0)
@@ -34,3 +33,12 @@ class Choice(models.Model):
 
     def __unicode__(self):
         return 
+
+"""
+class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.first_name + self.last_name
+"""

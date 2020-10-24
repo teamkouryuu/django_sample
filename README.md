@@ -1,5 +1,10 @@
 # django_sample
 
+## 動作環境
+
+python3
+
+
 - サーバー起動
     ```
     python manage.py runserver
